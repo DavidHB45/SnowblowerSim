@@ -2,7 +2,8 @@
     "name": "SnowSim.CoreRuntime",
     "rootNamespace": "SnowSim.CoreRuntime",
     "references": [
-        "SnowSim.Core"
+        "SnowSim.Core",
+        "Unity.InputSystem"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
