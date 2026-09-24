@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnowSim.Core", "SnowSim.Core\SnowSim.Core.csproj", "{302139A2-926A-4611-939F-1E4AD08C71D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnowSim.Core.Tests", "SnowSim.Core.Tests\SnowSim.Core.Tests.csproj", "{78E1AF88-7B51-431D-A44B-9F65ADEA0315}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{302139A2-926A-4611-939F-1E4AD08C71D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{302139A2-926A-4611-939F-1E4AD08C71D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{302139A2-926A-4611-939F-1E4AD08C71D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{302139A2-926A-4611-939F-1E4AD08C71D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78E1AF88-7B51-431D-A44B-9F65ADEA0315}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78E1AF88-7B51-431D-A44B-9F65ADEA0315}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78E1AF88-7B51-431D-A44B-9F65ADEA0315}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78E1AF88-7B51-431D-A44B-9F65ADEA0315}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
