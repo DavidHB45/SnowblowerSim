@@ -60,3 +60,14 @@ TestResults/
 Thumbs.db
 .idea/
 .vscode/
+
+# ---------------------------------------------------------------------------
+# Third-party assets: fetched locally by scripts/fetch-thirdparty.sh.
+# Only the manifest and license files (and their Unity .meta) are tracked.
+# ---------------------------------------------------------------------------
+/unity/Assets/ThirdParty/**
+!/unity/Assets/ThirdParty/**/
+!/unity/Assets/ThirdParty/manifest.json
+!/unity/Assets/ThirdParty/manifest.json.meta
+!/unity/Assets/ThirdParty/**/*.license.txt
+!/unity/Assets/ThirdParty/**/*.license.txt.meta
