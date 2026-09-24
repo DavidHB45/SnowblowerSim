@@ -47,6 +47,44 @@ Repo-wide. Claude Code must follow these in every phase:
 
 - Units: SI internally. Snow sim is CPU/Burst on NativeArrays. GPU renders only. Formulas live in src/SnowSim.Core.
 
+### P0: scaffold
+- **Core package:** `src/SnowSim.Core` is the UPM package `com.harris.snowsim.core`
+  (`unity/Packages/manifest.json` → `file:../../src/SnowSim.Core`). Assembly `SnowSim.Core`:
+  netstandard2.1, C# 9, nullable (`csc.rsp` for Unity), unsafe allowed, `noEngineReferences: true`.
+  `Editor/CoreImportGuard.cs` (menu *SnowSim/Validate Core Package*) errors on any Unity reference.
+  dotnet output goes to `src/.build/` (`src/Directory.Build.props`); never `bin/`/`obj/` inside the package.
+- **Core math types:** `SnowSim.Core.Maths.Float2` / `Float3`: blittable sequential structs
+  (`x,y[,z]`, `+ - *`, `Dot`, `Length`, `LengthSq`, `Lerp`). No `System.Numerics`. Convert to/from
+  `Unity.Mathematics.float3` at the Unity boundary.
+- **Core data:** `SnowSim.Core.Data.BlowerGeometry` (blittable readonly struct, meters);
+  `BlowerGeometry.SingleStage22` = housing 0.56 W × 0.30 H × 0.40 D, wheels 0.20 dia, handlebar
+  1.00 high / 0.65 behind housing, chute 0.15 dia × 0.35 long.
+- **Assemblies (asmdef names):** `SnowSim.Snow`, `SnowSim.Machine`, `SnowSim.Throw`, `SnowSim.Zones`,
+  `SnowSim.Weather`, `SnowSim.Economy`, `SnowSim.Levels`, `SnowSim.UI`, `SnowSim.CoreRuntime`
+  (folder `Scripts/Core`; *not* `SnowSim.Core`, which is the package), `SnowSim.Editor` (Editor-only),
+  `SnowSim.Tests.EditMode`, `SnowSim.Tests.PlayMode`. Every one references `SnowSim.Core`.
+  `SnowSim.CoreRuntime` also references `Unity.InputSystem`.
+- **Unity packages (only these added):** burst, collections, mathematics, inputsystem,
+  cinemachine 3.x, test-framework, plus the Core local package.
+- **AppMode:** `SnowSim.Core.App.AppMode { Game = 0, SnowTest = 1, ControllerTest = 2 }`.
+  `AppModeParser.Parse(args)` reads the last `-mode=X` (case-insensitive name). `Bootstrap.Mode` is
+  resolved once per process; F9 (dev builds/Editor, Input System) cycles modes and reloads Boot.
+- **Boot:** `Assets/_Project/Scenes/Boot.unity` is build scene 0 and has one GameObject `Bootstrap`
+  with the `SnowSim.CoreRuntime.Bootstrap` component. Bootstrap builds everything under a
+  `SceneContent` root: `Sun` (directional light) and `Ground` (40 × 40 m plane).
+- **Layers:** `Environment` = layer 8 (`SceneLayers.Environment`; named in TagManager by
+  *SnowSim/Apply Project Settings*).
+- **Grey-box blower:** `SnowSim.Machine.GreyBoxBlowerFactory.Create()`. Root `GreyBoxBlower` on the ground
+  at the housing rear-center, +Z forward, +Y up. Child transforms: `AugerPivot` (spins about X),
+  `ChutePivot` (yaw about Y, top of housing), `DeflectorPivot` (pitch about X, top of chute),
+  `ChuteExit` (snow leaves along its +Z), `WheelL` (−X), `WheelR` (+X), plus `Handlebar`. Visual
+  primitives have no colliders.
+- **Perf scale:** CI sets `SNOWSIM_PERF_SCALE=4` (env) and passes `-snowsimPerfScale 4` (Unity arg,
+  since GameCI may not forward env into its container). Perf tests multiply their ceilings by it:
+  read the env var, fall back to the arg, default 1.
+- **Editor LOCAL STEP menus:** *SnowSim/Apply Project Settings* (Input System (New), Linear,
+  Environment layer), *SnowSim/Apply Build Settings* (creates/wires Boot.unity, scene 0).
+
 ---
 
 ## Repo layout
