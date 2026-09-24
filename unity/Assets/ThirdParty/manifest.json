@@ -1,0 +1,17 @@
+[
+  {"id": "snowy_park_01", "source": "polyhaven", "url": "https://polyhaven.com/a/snowy_park_01", "license": "CC0", "destFolder": "polyhaven/snowy_park_01"},
+  {"id": "snow_field_puresky", "source": "polyhaven", "url": "https://polyhaven.com/a/snow_field_puresky", "license": "CC0", "destFolder": "polyhaven/snow_field_puresky"},
+  {"id": "snowy_forest", "source": "polyhaven", "url": "https://polyhaven.com/a/snowy_forest", "license": "CC0", "destFolder": "polyhaven/snowy_forest"},
+  {"id": "snowy_hillside_02", "source": "polyhaven", "url": "https://polyhaven.com/a/snowy_hillside_02", "license": "CC0", "destFolder": "polyhaven/snowy_hillside_02"},
+  {"id": "snowy_field", "source": "polyhaven", "url": "https://polyhaven.com/a/snowy_field", "license": "CC0", "destFolder": "polyhaven/snowy_field"},
+  {"id": "winter_sky", "source": "polyhaven", "url": "https://polyhaven.com/a/winter_sky", "license": "CC0", "destFolder": "polyhaven/winter_sky"},
+  {"id": "asphalt_snow", "source": "polyhaven", "url": "https://polyhaven.com/a/asphalt_snow", "license": "CC0", "destFolder": "polyhaven/asphalt_snow"},
+  {"id": "pavement_03", "source": "polyhaven", "url": "https://polyhaven.com/a/pavement_03", "license": "CC0", "destFolder": "polyhaven/pavement_03"},
+  {"id": "gravel_concrete_04", "source": "polyhaven", "url": "https://polyhaven.com/a/gravel_concrete_04", "license": "CC0", "destFolder": "polyhaven/gravel_concrete_04"},
+  {"id": "Snow005", "source": "ambientcg", "url": "https://ambientcg.com/view?id=Snow005", "license": "CC0", "destFolder": "ambientcg/Snow005"},
+  {"id": "Snow006", "source": "ambientcg", "url": "https://ambientcg.com/view?id=Snow006", "license": "CC0", "destFolder": "ambientcg/Snow006"},
+  {"id": "Snow010A", "source": "ambientcg", "url": "https://ambientcg.com/view?id=Snow010A", "license": "CC0", "destFolder": "ambientcg/Snow010A"},
+  {"id": "Asphalt006", "source": "ambientcg", "url": "https://ambientcg.com/view?id=Asphalt006", "license": "CC0", "destFolder": "ambientcg/Asphalt006"},
+  {"id": "Bricks038", "source": "ambientcg", "url": "https://ambientcg.com/view?id=Bricks038", "license": "CC0", "destFolder": "ambientcg/Bricks038"},
+  {"id": "Bricks066", "source": "ambientcg", "url": "https://ambientcg.com/view?id=Bricks066", "license": "CC0", "destFolder": "ambientcg/Bricks066"}
+]

@@ -1,0 +1,16 @@
+{
+    "name": "SnowSim.Machine",
+    "rootNamespace": "SnowSim.Machine",
+    "references": [
+        "SnowSim.Core"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

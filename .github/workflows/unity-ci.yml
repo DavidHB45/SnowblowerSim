@@ -1,0 +1,92 @@
+name: unity-ci
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+
+concurrency:
+  group: unity-ci-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  # Perf tests multiply their time/alloc ceilings by this on CI runners.
+  SNOWSIM_PERF_SCALE: "4"
+
+jobs:
+  core:
+    name: core
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: T1 core tests
+        run: bash scripts/core-test.sh
+
+  unity-tests:
+    name: unity-tests
+    needs: core
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read Unity version
+        id: unity
+        run: bash scripts/unity-version.sh >> "$GITHUB_OUTPUT"
+      - uses: actions/cache@v4
+        with:
+          path: unity/Library
+          key: Library-${{ runner.os }}-${{ hashFiles('unity/Packages/manifest.json', 'unity/ProjectSettings/**') }}
+          restore-keys: |
+            Library-${{ runner.os }}-
+      - name: Unity EditMode + PlayMode tests
+        id: tests
+        uses: game-ci/unity-test-runner@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+          SNOWSIM_PERF_SCALE: ${{ env.SNOWSIM_PERF_SCALE }}
+        with:
+          projectPath: unity
+          unityVersion: ${{ steps.unity.outputs.version }}
+          testMode: all
+          artifactsPath: test-results
+          # Env vars are not guaranteed to reach the Unity container; pass it as an arg too.
+          customParameters: -snowsimPerfScale ${{ env.SNOWSIM_PERF_SCALE }}
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unity-test-results
+          path: ${{ steps.tests.outputs.artifactsPath || 'test-results' }}
+          if-no-files-found: warn
+
+  unity-build-smoke:
+    name: unity-build-smoke
+    if: github.event_name == 'pull_request'
+    needs: unity-tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read Unity version
+        id: unity
+        run: bash scripts/unity-version.sh >> "$GITHUB_OUTPUT"
+      - uses: actions/cache@v4
+        with:
+          path: unity/Library
+          key: Library-${{ runner.os }}-${{ hashFiles('unity/Packages/manifest.json', 'unity/ProjectSettings/**') }}
+          restore-keys: |
+            Library-${{ runner.os }}-
+      - name: Headless StandaloneLinux64 build (compile smoke)
+        uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          projectPath: unity
+          unityVersion: ${{ steps.unity.outputs.version }}
+          targetPlatform: StandaloneLinux64
+          versioning: None

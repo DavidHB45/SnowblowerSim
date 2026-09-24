@@ -1,0 +1,17 @@
+{
+    "name": "SnowSim.CoreRuntime",
+    "rootNamespace": "SnowSim.CoreRuntime",
+    "references": [
+        "SnowSim.Core",
+        "Unity.InputSystem"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

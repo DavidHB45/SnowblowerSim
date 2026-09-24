@@ -1,0 +1,31 @@
+{
+    "name": "SnowSim.Tests.PlayMode",
+    "rootNamespace": "SnowSim.Tests.PlayMode",
+    "references": [
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner",
+        "SnowSim.Core",
+        "SnowSim.Snow",
+        "SnowSim.Machine",
+        "SnowSim.Throw",
+        "SnowSim.Zones",
+        "SnowSim.Weather",
+        "SnowSim.Economy",
+        "SnowSim.Levels",
+        "SnowSim.UI",
+        "SnowSim.CoreRuntime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
