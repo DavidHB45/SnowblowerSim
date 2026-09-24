@@ -57,6 +57,7 @@ CLAUDE.md                     this file — read first every session
 scripts/
   core-test.sh                T1: dotnet build + test of src/
   ci-wait.sh                  T2: wait on the latest Actions run for this branch
+  unity-version.sh            CI helper: reads m_EditorVersion from ProjectVersion.txt
   sketchfab-search.py         asset recon (stdlib only)
   fetch-thirdparty.sh         downloads unity/Assets/ThirdParty/manifest.json entries (owner's machine only)
 src/
