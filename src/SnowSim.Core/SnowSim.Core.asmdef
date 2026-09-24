@@ -1,16 +1,14 @@
 {
-    "name": "SnowSim.Levels",
-    "rootNamespace": "SnowSim.Levels",
-    "references": [
-        "SnowSim.Core"
-    ],
+    "name": "SnowSim.Core",
+    "rootNamespace": "SnowSim.Core",
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
-    "allowUnsafeCode": false,
+    "allowUnsafeCode": true,
     "overrideReferences": false,
     "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [],
     "versionDefines": [],
-    "noEngineReferences": false
+    "noEngineReferences": true
 }

@@ -4,6 +4,7 @@
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
+        "SnowSim.Core",
         "SnowSim.Snow",
         "SnowSim.Machine",
         "SnowSim.Throw",

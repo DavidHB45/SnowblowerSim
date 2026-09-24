@@ -1,7 +1,9 @@
 {
     "name": "SnowSim.Economy",
     "rootNamespace": "SnowSim.Economy",
-    "references": [],
+    "references": [
+        "SnowSim.Core"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

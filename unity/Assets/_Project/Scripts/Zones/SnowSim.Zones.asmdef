@@ -1,7 +1,9 @@
 {
     "name": "SnowSim.Zones",
     "rootNamespace": "SnowSim.Zones",
-    "references": [],
+    "references": [
+        "SnowSim.Core"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

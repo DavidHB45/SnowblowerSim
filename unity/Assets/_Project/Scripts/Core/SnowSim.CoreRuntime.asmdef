@@ -1,7 +1,9 @@
 {
     "name": "SnowSim.CoreRuntime",
     "rootNamespace": "SnowSim.CoreRuntime",
-    "references": [],
+    "references": [
+        "SnowSim.Core"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

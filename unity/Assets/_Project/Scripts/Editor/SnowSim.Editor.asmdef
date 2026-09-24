@@ -2,6 +2,7 @@
     "name": "SnowSim.Editor",
     "rootNamespace": "SnowSim.Editor",
     "references": [
+        "SnowSim.Core",
         "SnowSim.Snow",
         "SnowSim.Machine",
         "SnowSim.Throw",

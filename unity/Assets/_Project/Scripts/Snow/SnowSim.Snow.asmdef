@@ -1,7 +1,9 @@
 {
     "name": "SnowSim.Snow",
     "rootNamespace": "SnowSim.Snow",
-    "references": [],
+    "references": [
+        "SnowSim.Core"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

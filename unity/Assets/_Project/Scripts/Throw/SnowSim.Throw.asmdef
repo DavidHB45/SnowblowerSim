@@ -1,7 +1,9 @@
 {
     "name": "SnowSim.Throw",
     "rootNamespace": "SnowSim.Throw",
-    "references": [],
+    "references": [
+        "SnowSim.Core"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
