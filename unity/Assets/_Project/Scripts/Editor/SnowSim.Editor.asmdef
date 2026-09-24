@@ -1,0 +1,26 @@
+{
+    "name": "SnowSim.Editor",
+    "rootNamespace": "SnowSim.Editor",
+    "references": [
+        "SnowSim.Snow",
+        "SnowSim.Machine",
+        "SnowSim.Throw",
+        "SnowSim.Zones",
+        "SnowSim.Weather",
+        "SnowSim.Economy",
+        "SnowSim.Levels",
+        "SnowSim.UI",
+        "SnowSim.CoreRuntime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

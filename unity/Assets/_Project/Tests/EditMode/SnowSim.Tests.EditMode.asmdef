@@ -1,0 +1,33 @@
+{
+    "name": "SnowSim.Tests.EditMode",
+    "rootNamespace": "SnowSim.Tests.EditMode",
+    "references": [
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner",
+        "SnowSim.Snow",
+        "SnowSim.Machine",
+        "SnowSim.Throw",
+        "SnowSim.Zones",
+        "SnowSim.Weather",
+        "SnowSim.Economy",
+        "SnowSim.Levels",
+        "SnowSim.UI",
+        "SnowSim.CoreRuntime",
+        "SnowSim.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

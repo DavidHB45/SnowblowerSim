@@ -69,7 +69,8 @@ unity/                        Unity 6 LTS URP project (ProjectSettings/ and Boot
   Packages/manifest.json
   Assets/
     _Project/
-      Scripts/{Snow,Machine,Throw,Zones,Weather,Economy,Levels,UI,Core}/   one asmdef each: SnowSim.<Folder>
+      Scripts/{Snow,Machine,Throw,Zones,Weather,Economy,Levels,UI}/   one asmdef each: SnowSim.<Folder>
+      Scripts/Core/           SnowSim.CoreRuntime (Unity-side; "SnowSim.Core" is the pure package)
       Scripts/Editor/         SnowSim.Editor (Editor-only tools, appliers, guards)
       Tests/EditMode/         SnowSim.Tests.EditMode
       Tests/PlayMode/         SnowSim.Tests.PlayMode
